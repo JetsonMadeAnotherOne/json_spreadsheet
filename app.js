@@ -29,19 +29,21 @@
                 <td>${user.email}</td>
                 <td>${user.website}</td>
             </tr>`, '');
+    }
+    function render2(users) {
         const table2Body = document.getElementById('users-table2-body');
         table2Body.innerHTML = users.reduce((html, user) =>
             html + `
             <tr>
-                <td>${user.phone}</td>
-                <td>${user.address.suite}</td>
-                <td>${user.address.city}</td>
-                <td>${user.company.name}</td>
+                <td>${user.name}</td>
+                <td>${user.username}</td>
+                <td>${user.email}</td>
+                <td>${user.website}</td>
             </tr>`, '');
     }
-
     let users = await getUsers();
     render(users);
+    render2(users);
 
     document.querySelector('thead tr')
         .addEventListener('click', e => {
