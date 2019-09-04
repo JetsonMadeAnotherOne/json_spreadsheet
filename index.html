@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Test task</title>
+    <link href="style.css" rel="stylesheet">
+</head>
+<body>
+<button id="myBtn">Detail info</button>
+<div id="myModal" class="modal">
+    <div class="modal-content">
+    <span class="close">&times;</span>
+        <table>
+            <thead>
+            <tr>
+                <th>Phone</th>
+                <th>Suite</th>
+                <th>City</th>
+                <th>Zip-code</th>
+            </tr>
+            </thead>
+            <tbody id="users-table2-body"></tbody>
+        </table>
+    </div>
+</div>
+<table>
+    <thead>
+    <tr>
+        <th class="t-header" data-prop="name" data-sort="asc">Name</th>
+        <th class="t-header" data-prop="username" data-sort="asc">Username</th>
+        <th class="t-header" data-prop="email" data-sort="asc">Email</th>
+        <th class="t-header" data-prop="website" data-sort="asc">Website</th>
+    </tr>
+    </thead>
+    <tbody id="users-table-body"></tbody>
+</table>
+
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
