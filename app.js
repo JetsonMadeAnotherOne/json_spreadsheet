@@ -1,19 +1,4 @@
 (async () => {
-    let modal = document.getElementById('myModal');
-    let btn = document.getElementById("myBtn");
-    let span = document.getElementsByClassName("close")[0];
-
-    btn.onclick = function () {
-        modal.style.display = "block";
-    };
-    span.onclick = function () {
-        modal.style.display = "none";
-    };
-    window.onclick = function (event) {
-        if (event.target == modal) {
-            modal.style.display = "none";
-        }
-    };
     async function getUsers() {
         const response = await axios.get(`https://jsonplaceholder.typicode.com/users`);
         return response.data;
@@ -30,20 +15,9 @@
                 <td>${user.website}</td>
             </tr>`, '');
     }
-    function render2(users) {
-        const table2Body = document.getElementById('users-table2-body');
-        table2Body.innerHTML = users.reduce((html, user) =>
-            html + `
-            <tr>
-                <td>${user.name}</td>
-                <td>${user.username}</td>
-                <td>${user.email}</td>
-                <td>${user.website}</td>
-            </tr>`, '');
-    }
+
     let users = await getUsers();
     render(users);
-    render2(users);
 
     document.querySelector('thead tr')
         .addEventListener('click', e => {
